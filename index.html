@@ -56,7 +56,7 @@
       opacity: 0.7;
     }
 
-    /* Sección GIF principal: escala proporcionalmente sin recortes */
+    /* Sección GIF principal */
     .hero-section {
       width: 100%;
       display: block;
@@ -71,7 +71,7 @@
       object-fit: contain;
     }
 
-    /* Sección Bio: pegada inmediatamente debajo del GIF */
+    /* Sección Bio */
     .bio-section {
       background-color: #F2F2F2;
       padding: 15px 20px 40px 20px;
@@ -150,6 +150,9 @@
     .archive-category {
       margin-top: 25px;
       margin-bottom: 12px;
+      cursor: pointer;
+      user-select: none;
+      width: fit-content;
     }
 
     .category-title {
@@ -165,6 +168,7 @@
       gap: 6px;
     }
 
+    /* Ícono desplegable estilo MS Outlook */
     .outlook-icon {
       display: inline-block;
       width: 15px;
@@ -185,15 +189,29 @@
       border-left: 3px solid transparent;
       border-right: 3px solid transparent;
       border-top: 4px solid #B30033;
+      transform: rotate(-90deg); /* Apunta hacia la derecha cuando está cerrado */
+      transition: transform 0.2s ease;
     }
 
+    /* Rotación del triángulo al desplegar */
+    .archive-category.active .outlook-icon::before {
+      transform: rotate(0deg); /* Apunta hacia abajo cuando está desplegado */
+    }
+
+    /* Ocultar listas por defecto */
     .archive-list {
-      display: flex;
+      display: none;
       flex-direction: column;
       gap: 10px;
       padding-left: 0;
       list-style: none;
       margin: 0;
+      margin-bottom: 15px;
+    }
+
+    /* Mostrar lista cuando está activa */
+    .archive-list.active {
+      display: flex;
     }
 
     .archive-item {
@@ -370,6 +388,19 @@
 
     </div>
   </section>
+
+  <!-- Script para desplegar categorías al hacer clic -->
+  <script>
+    document.querySelectorAll('.archive-category').forEach(category => {
+      category.addEventListener('click', () => {
+        category.classList.toggle('active');
+        const list = category.nextElementSibling;
+        if (list && list.classList.contains('archive-list')) {
+          list.classList.toggle('active');
+        }
+      });
+    });
+  </script>
 
   <!-- Script para la animación física de las figuras -->
   <script>
