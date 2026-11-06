@@ -139,6 +139,7 @@
       justify-content: center;
     }
 
+    /* Distribución horizontal fluida para las categorías */
     .archive-container {
       max-width: 550px;
       width: 100%;
@@ -146,8 +147,15 @@
       z-index: 2;
       text-align: left;
       display: flex;
-      flex-direction: column;
-      gap: 16px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 14px 18px;
+      align-items: center;
+    }
+
+    .archive-category-link {
+      text-decoration: none;
+      display: inline-block;
     }
 
     .category-title {
@@ -164,47 +172,17 @@
       transition: color 0.2s ease;
     }
 
-    .archive-category-link {
-      text-decoration: none;
-      width: fit-content;
-      display: block;
-    }
-
-    .archive-category-link:hover .category-title {
-      color: #00FF00;
-    }
-
-    /* Ícono desplegable estilo MS Outlook */
-    .outlook-icon {
-      display: inline-block;
+    .paperclip-icon {
       width: 15px;
-      height: 11px;
-      border: 1.5px solid #B30033;
-      position: relative;
-      background-color: transparent;
-      box-sizing: border-box;
-      transition: border-color 0.2s ease;
+      height: 15px;
+      min-width: 15px;
+      color: #B30033;
+      transition: color 0.2s ease;
     }
 
-    .archive-category-link:hover .outlook-icon {
-      border-color: #00FF00;
-    }
-
-    .outlook-icon::before {
-      content: '';
-      position: absolute;
-      top: 1px;
-      left: 1px;
-      width: 0;
-      height: 0;
-      border-left: 3px solid transparent;
-      border-right: 3px solid transparent;
-      border-top: 4px solid #B30033;
-      transition: border-top-color 0.2s ease;
-    }
-
-    .archive-category-link:hover .outlook-icon::before {
-      border-top-color: #00FF00;
+    .archive-category-link:hover .category-title,
+    .archive-category-link:hover .paperclip-icon {
+      color: #00FF00;
     }
 
     /* Figuras geométricas flotantes */
@@ -226,6 +204,7 @@
       header { padding: 8px 10px; }
       .bio-section { padding: 10px 15px 30px 15px; }
       .archive-section { padding: 30px 15px 60px 15px; }
+      .archive-container { gap: 10px 14px; }
     }
   </style>
 </head>
@@ -269,51 +248,76 @@
 
   <!-- Sección Archivo -->
   <section id="archivo" class="archive-section">
+    <!-- 6 Figuras flotantes -->
     <div class="geo-shape" id="shape1"></div>
     <div class="geo-shape" id="shape2"></div>
     <div class="geo-shape" id="shape3"></div>
+    <div class="geo-shape" id="shape4"></div>
+    <div class="geo-shape" id="shape5"></div>
+    <div class="geo-shape" id="shape6"></div>
 
     <div class="archive-container">
 
       <!-- PROYECTOS -->
       <a href="proyectos.html" class="archive-category-link">
-        <div class="category-title"><span class="outlook-icon"></span> PROYECTOS</div>
+        <div class="category-title">
+          <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          PROYECTOS
+        </div>
       </a>
 
       <!-- CLASES -->
       <a href="clases.html" class="archive-category-link">
-        <div class="category-title"><span class="outlook-icon"></span> CLASES</div>
+        <div class="category-title">
+          <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          CLASES
+        </div>
       </a>
 
       <!-- COLABORACIONES -->
       <a href="colaboraciones.html" class="archive-category-link">
-        <div class="category-title"><span class="outlook-icon"></span> COLABORACIONES</div>
+        <div class="category-title">
+          <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          COLABORACIONES
+        </div>
       </a>
 
       <!-- PUBLICACIONES DE TEXTO -->
       <a href="publicaciones-de-texto.html" class="archive-category-link">
-        <div class="category-title"><span class="outlook-icon"></span> PUBLICACIONES DE TEXTO</div>
+        <div class="category-title">
+          <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          PUBLICACIONES DE TEXTO
+        </div>
       </a>
 
       <!-- FANZINE -->
       <a href="fanzine.html" class="archive-category-link">
-        <div class="category-title"><span class="outlook-icon"></span> FANZINE</div>
+        <div class="category-title">
+          <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          FANZINE
+        </div>
       </a>
 
       <!-- CAMPAÑA FOTOGRÁFICA -->
       <a href="campana-fotografica.html" class="archive-category-link">
-        <div class="category-title"><span class="outlook-icon"></span> CAMPAÑA FOTOGRÁFICA</div>
+        <div class="category-title">
+          <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          CAMPAÑA FOTOGRÁFICA
+        </div>
       </a>
 
       <!-- ASISTENCIA DE DIRECCIÓN -->
       <a href="asistencia-de-direccion.html" class="archive-category-link">
-        <div class="category-title"><span class="outlook-icon"></span> ASISTENCIA DE DIRECCIÓN</div>
+        <div class="category-title">
+          <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          ASISTENCIA DE DIRECCIÓN
+        </div>
       </a>
 
     </div>
   </section>
 
-  <!-- Script para la animación física de las figuras -->
+  <!-- Script para la animación física de las 6 figuras -->
   <script>
     const section = document.getElementById('archivo');
 
@@ -329,7 +333,10 @@
     const items = [
       { el: document.getElementById('shape1'), x: 10,  y: 20,  vx: 0.45, vy: 0.35, w: 110, h: 110, shapeIdx: 0 },
       { el: document.getElementById('shape2'), x: 180, y: 150, vx: -0.35, vy: 0.5,  w: 160, h: 70,  shapeIdx: 1 },
-      { el: document.getElementById('shape3'), x: 80,  y: 350, vx: 0.5,  vy: -0.4, w: 135, h: 135, shapeIdx: 2 }
+      { el: document.getElementById('shape3'), x: 80,  y: 350, vx: 0.5,  vy: -0.4, w: 135, h: 135, shapeIdx: 2 },
+      { el: document.getElementById('shape4'), x: 220, y: 50,  vx: -0.4, vy: -0.3, w: 90,  h: 90,  shapeIdx: 4 },
+      { el: document.getElementById('shape5'), x: 50,  y: 220, vx: 0.3,  vy: 0.45, w: 140, h: 60,  shapeIdx: 5 },
+      { el: document.getElementById('shape6'), x: 150, y: 280, vx: -0.5, vy: 0.25, w: 180, h: 80,  shapeIdx: 3 }
     ];
 
     items.forEach(item => updateShape(item));
