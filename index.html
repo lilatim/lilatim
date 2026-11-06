@@ -737,3 +737,42 @@
 
       items.forEach(item => {
         item.x += item.vx;
+        item.y += item.vy;
+
+        let hit = false;
+
+        if (item.x <= 0) {
+          item.x = 0;
+          item.vx *= -1;
+          hit = true;
+        } else if (item.x + item.w >= boundsWidth) {
+          item.x = boundsWidth - item.w;
+          item.vx *= -1;
+          hit = true;
+        }
+
+        if (item.y <= 0) {
+          item.y = 0;
+          item.vy *= -1;
+          hit = true;
+        } else if (item.y + item.h >= boundsHeight) {
+          item.y = boundsHeight - item.h;
+          item.vy *= -1;
+          hit = true;
+        }
+
+        if (hit) {
+          morphGeometric(item);
+        }
+
+        item.el.style.transform = `translate3d(${item.x}px, ${item.y}px, 0)`;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+  </script>
+
+</body>
+</html>
