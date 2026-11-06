@@ -26,11 +26,11 @@
       left: 0;
       width: 100%;
       z-index: 10;
-      padding: 10px 12px;
+      padding: 14px 24px;
       box-sizing: border-box;
       font-family: 'Alegreya Sans', sans-serif;
       font-weight: 500;
-      font-size: 15px;
+      font-size: 18px;
       background-color: rgba(242, 242, 242, 0.95);
     }
 
@@ -43,7 +43,7 @@
 
     nav {
       display: flex;
-      gap: 12px;
+      gap: 16px;
     }
 
     nav a {
@@ -72,10 +72,10 @@
       object-fit: contain;
     }
 
-    /* Sección Bio */
+    /* Sección Bio: Ancho completo de la pantalla */
     .bio-section {
       background-color: #F2F2F2;
-      padding: 15px 20px 30px 20px;
+      padding: 25px 40px 40px 40px;
       width: 100%;
       box-sizing: border-box;
       display: flex;
@@ -83,29 +83,29 @@
     }
 
     .bio-container {
-      max-width: 550px;
       width: 100%;
+      max-width: 100%;
     }
 
     .separator-line {
       border: none;
-      border-top: 1px solid #00FF00;
+      border-top: 1.5px solid #00FF00;
       margin-top: 0;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       width: 100%;
     }
 
     .bio-text {
       font-family: 'Alegreya Sans', sans-serif;
       font-weight: 400;
-      font-size: 12px;
+      font-size: 18px;
       color: #000000;
-      line-height: 1.5;
+      line-height: 1.6;
       text-align: left;
     }
 
     .bio-text p {
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
 
     .bio-text a {
@@ -118,12 +118,12 @@
       color: #00FF00;
     }
 
-    /* Sección Archivo */
+    /* Sección Archivo: Ancho completo */
     .archive-section {
       position: relative;
       overflow: hidden;
       background-color: #F2F2F2;
-      padding: 20px 20px 60px 20px;
+      padding: 25px 40px 80px 40px;
       width: 100%;
       box-sizing: border-box;
       display: flex;
@@ -131,8 +131,8 @@
     }
 
     .archive-container {
-      max-width: 550px;
       width: 100%;
+      max-width: 100%;
       position: relative;
       z-index: 2;
       text-align: left;
@@ -140,8 +140,8 @@
 
     /* Categoría desplegable */
     .archive-category {
-      margin-top: 25px;
-      margin-bottom: 12px;
+      margin-top: 30px;
+      margin-bottom: 16px;
       cursor: pointer;
       user-select: none;
       width: fit-content;
@@ -151,21 +151,21 @@
       font-family: 'Alegreya Sans', sans-serif;
       font-style: italic;
       font-weight: 500;
-      font-size: 17px;
+      font-size: 24px;
       color: #B30033;
       text-decoration: underline;
       text-transform: uppercase;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 10px;
     }
 
-    /* Ícono estilo MS Outlook */
+    /* Ícono estilo MS Outlook escalado */
     .outlook-icon {
       display: inline-block;
-      width: 15px;
-      height: 11px;
-      border: 1.5px solid #B30033;
+      width: 20px;
+      height: 14px;
+      border: 2px solid #B30033;
       position: relative;
       background-color: transparent;
       box-sizing: border-box;
@@ -175,12 +175,12 @@
       content: '';
       position: absolute;
       top: 1px;
-      left: 1px;
+      left: 2px;
       width: 0;
       height: 0;
-      border-left: 3px solid transparent;
-      border-right: 3px solid transparent;
-      border-top: 4px solid #B30033;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid #B30033;
       transform: rotate(-90deg);
       transition: transform 0.2s ease;
     }
@@ -189,13 +189,13 @@
       transform: rotate(0deg);
     }
 
-    /* Contenedores de subproyectos ocultos por defecto */
+    /* Contenedores de subproyectos */
     .subproject-grid {
       display: none;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 16px 14px;
-      margin: 5px 0 25px 0;
+      gap: 24px 20px;
+      margin: 10px 0 35px 0;
       padding-left: 0;
       width: 100%;
     }
@@ -204,33 +204,33 @@
       display: flex;
     }
 
-    /* Tarjeta individual por subproyecto (Enlace completo) */
+    /* Tarjeta individual por subproyecto */
     .subproject-card {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      width: calc(33.33% - 10px);
-      min-width: 140px;
+      gap: 8px;
+      width: calc(25% - 15px);
+      min-width: 220px;
       text-decoration: none;
       box-sizing: border-box;
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
     .subproject-card:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       opacity: 0.95;
     }
 
     .subproject-title-header {
       display: flex;
       align-items: flex-start;
-      gap: 5px;
+      gap: 6px;
     }
 
     .paperclip-icon {
-      width: 14px;
-      height: 14px;
-      min-width: 14px;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
       margin-top: 2px;
       color: #B30033;
       transition: color 0.2s ease;
@@ -240,10 +240,10 @@
       font-family: 'Alegreya Sans', sans-serif;
       font-style: italic;
       font-weight: 500;
-      font-size: 14px;
+      font-size: 18px;
       color: #B30033;
       text-transform: uppercase;
-      line-height: 1.2;
+      line-height: 1.25;
       word-break: break-word;
       transition: color 0.2s ease;
     }
@@ -253,10 +253,10 @@
       color: #00FF00;
     }
 
-    /* Foto única por subproyecto */
+    /* Foto del subproyecto */
     .subproject-photo {
       width: 100%;
-      height: 110px;
+      height: 180px;
       object-fit: cover;
       border-radius: 2px;
       display: block;
@@ -287,13 +287,18 @@
                   height 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
+    @media (max-width: 768px) {
+      .bio-section, .archive-section { padding-left: 20px; padding-right: 20px; }
+      .bio-text { font-size: 15px; }
+      .category-title { font-size: 20px; }
+      .subproject-card { width: calc(50% - 10px); }
+      .subproject-photo { height: 140px; }
+    }
+
     @media (max-width: 480px) {
-      header { padding: 8px 10px; }
-      .bio-section { padding: 10px 15px 20px 15px; }
-      .archive-section { padding: 15px 15px 45px 15px; }
-      .subproject-grid { gap: 12px 10px; }
-      .subproject-card { width: calc(50% - 5px); min-width: 130px; }
-      .subproject-photo { height: 95px; }
+      header { padding: 10px 14px; font-size: 16px; }
+      .subproject-card { width: 100%; }
+      .subproject-photo { height: 180px; }
     }
   </style>
 </head>
