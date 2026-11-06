@@ -203,11 +203,11 @@
       display: flex;
     }
 
-    /* Cada ítem con su foto */
+    /* Bloque de subtítulo e imágenes */
     .archive-item-block {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
     }
 
     .archive-item-header {
@@ -243,21 +243,30 @@
       color: #00FF00;
     }
 
-    /* Foto del subtítulo */
+    /* Contenedor de fotos horizontal */
+    .subitem-photos {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-left: 23px;
+      width: calc(100% - 23px);
+    }
+
     .subitem-photo {
-      width: 100%;
-      max-width: 450px;
+      flex: 0 1 calc(50% - 5px);
+      max-width: 220px;
       height: auto;
       display: block;
       border-radius: 2px;
       cursor: pointer;
-      margin-left: 23px;
+      object-fit: cover;
       transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
     .subitem-photo:hover {
       opacity: 0.9;
-      transform: scale(1.01);
+      transform: scale(1.02);
     }
 
     /* Imagen divisora al final */
@@ -326,7 +335,8 @@
       header { padding: 8px 10px; }
       .bio-section { padding: 10px 15px 20px 15px; }
       .archive-section { padding: 15px 15px 45px 15px; }
-      .subitem-photo { margin-left: 0; max-width: 100%; }
+      .subitem-photos { margin-left: 0; width: 100%; gap: 8px; }
+      .subitem-photo { flex: 0 1 calc(50% - 4px); max-width: 100%; }
     }
   </style>
 </head>
@@ -365,7 +375,7 @@
     </div>
   </section>
 
-  <!-- Sección Archivo (Categorías desplegables con fotos) -->
+  <!-- Sección Archivo (Categorías desplegables con fotos en horizontal) -->
   <section id="archivo" class="archive-section">
     <div class="geo-shape" id="shape1"></div>
     <div class="geo-shape" id="shape2"></div>
@@ -386,7 +396,10 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="seida-retida.html">SEIDA RETIDA</a>
           </div>
-          <img src="seida retida 2025 CABA/SEIDA01.jpg" class="subitem-photo" alt="SEIDA RETIDA" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="seida retida 2025 CABA/SEIDA01.jpg" class="subitem-photo" alt="SEIDA RETIDA 01" onclick="openLightbox(this.src)">
+            <img src="seida retida 2025 CABA/SEIDA03.jpg" class="subitem-photo" alt="SEIDA RETIDA 03" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -394,7 +407,10 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="revuelto-conjuntivo.html">REVUELTO CONJUNTIVO</a>
           </div>
-          <img src="ITINERARIO_ERANTE/ITINERARIO01.JPG" class="subitem-photo" alt="REVUELTO CONJUNTIVO" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="ITINERARIO_ERANTE/ITINERARIO01.JPG" class="subitem-photo" alt="REVUELTO CONJUNTIVO 01" onclick="openLightbox(this.src)">
+            <img src="ITINERARIO_ERANTE/ITINERARIO02.jpg" class="subitem-photo" alt="REVUELTO CONJUNTIVO 02" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -402,7 +418,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">PUÑAL</a>
           </div>
-          <img src="punal.jpg" class="subitem-photo" alt="PUÑAL" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="punal.jpg" class="subitem-photo" alt="PUÑAL" onclick="openLightbox(this.src)">
+          </div>
         </div>
       </div>
 
@@ -416,7 +434,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">DESDE Y HACIA EL PISO</a>
           </div>
-          <img src="clases01.jpg" class="subitem-photo" alt="DESDE Y HACIA EL PISO" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="clases01.jpg" class="subitem-photo" alt="DESDE Y HACIA EL PISO" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -424,7 +444,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">ARCHIVOS QUE MUEVEN ESCRITURAS, ESCRITURAS QUE MUEVEN ARCHIVOS</a>
           </div>
-          <img src="clases02.jpg" class="subitem-photo" alt="ARCHIVOS QUE MUEVEN ESCRITURAS" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="clases02.jpg" class="subitem-photo" alt="ARCHIVOS QUE MUEVEN ESCRITURAS" onclick="openLightbox(this.src)">
+          </div>
         </div>
       </div>
 
@@ -438,7 +460,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">SUPER FAN</a>
           </div>
-          <img src="superfan.jpg" class="subitem-photo" alt="SUPER FAN" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="superfan.jpg" class="subitem-photo" alt="SUPER FAN" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -446,7 +470,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">CAMPER</a>
           </div>
-          <img src="camper.jpg" class="subitem-photo" alt="CAMPER" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="camper.jpg" class="subitem-photo" alt="CAMPER" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -454,7 +480,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">EVENTUALMENTE</a>
           </div>
-          <img src="eventualmente.jpg" class="subitem-photo" alt="EVENTUALMENTE" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="eventualmente.jpg" class="subitem-photo" alt="EVENTUALMENTE" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -462,7 +490,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">DANZA TRANS</a>
           </div>
-          <img src="danzatrans.jpg" class="subitem-photo" alt="DANZA TRANS" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="danzatrans.jpg" class="subitem-photo" alt="DANZA TRANS" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -470,7 +500,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">CAMPAÑA PRIDE</a>
           </div>
-          <img src="pride.jpg" class="subitem-photo" alt="CAMPAÑA PRIDE" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="pride.jpg" class="subitem-photo" alt="CAMPAÑA PRIDE" onclick="openLightbox(this.src)">
+          </div>
         </div>
       </div>
 
@@ -484,7 +516,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/934/pedagogicas-travestis" target="_blank">INCITACIONES PEDAGÓGICAS TRAVESTIS.</a>
           </div>
-          <img src="texto01.jpg" class="subitem-photo" alt="INCITACIONES PEDAGÓGICAS TRAVESTIS" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="texto01.jpg" class="subitem-photo" alt="INCITACIONES PEDAGÓGICAS TRAVESTIS" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -492,7 +526,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/914/manifiesto-al-cuerpo-inteligente-sobre-el-cuerpo-que-danza-como-una-inteligencia-artificial" target="_blank">MANIFIESTO AL CUERPO INTELIGENTE.</a>
           </div>
-          <img src="texto02.jpg" class="subitem-photo" alt="MANIFIESTO AL CUERPO INTELIGENTE" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="texto02.jpg" class="subitem-photo" alt="MANIFIESTO AL CUERPO INTELIGENTE" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -500,7 +536,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/907/fisicalidad" target="_blank">LA FISICALIDAD DE LAS COSAS (DESDE) CON LAS QUE BAILO</a>
           </div>
-          <img src="texto03.jpg" class="subitem-photo" alt="LA FISICALIDAD DE LAS COSAS" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="texto03.jpg" class="subitem-photo" alt="LA FISICALIDAD DE LAS COSAS" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -508,7 +546,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="https://cuadernosdedanza.com.ar/index.php/danzacontemporaneaencartelera/871/mas-tierra-entre-tanto-cemento" target="_blank">MÁS TIERRA ENTRE TANTO CEMENTO</a>
           </div>
-          <img src="texto04.jpg" class="subitem-photo" alt="MÁS TIERRA ENTRE TANTO CEMENTO" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="texto04.jpg" class="subitem-photo" alt="MÁS TIERRA ENTRE TANTO CEMENTO" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -516,7 +556,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="https://cuadernosdedanza.com.ar/index.php/danzacontemporaneaencartelera/853/entre-parentesis" target="_blank">UNA ESPERANZA DESROMANTIZADA ENTRE (UN) PARÉNTESIS EN PARQUE PATRICIOS EN LA CASA (QUE PRONTO SERÁ NAVE ESPACIAL) Y GALPÓN FACE</a>
           </div>
-          <img src="texto05.jpg" class="subitem-photo" alt="UNA ESPERANZA DESROMANTIZADA" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="texto05.jpg" class="subitem-photo" alt="UNA ESPERANZA DESROMANTIZADA" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -524,7 +566,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/839/toma-la-danza" target="_blank">TOMA LA DANZA</a>
           </div>
-          <img src="texto06.jpg" class="subitem-photo" alt="TOMA LA DANZA" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="texto06.jpg" class="subitem-photo" alt="TOMA LA DANZA" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -532,7 +576,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/823/improvisacion" target="_blank">ARCHIVO EN FICCIÓN DE MIS PRÁCTICAS COTIDIANAS DE IMPROVISACIÓN</a>
           </div>
-          <img src="texto07.jpg" class="subitem-photo" alt="ARCHIVO EN FICCIÓN" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="texto07.jpg" class="subitem-photo" alt="ARCHIVO EN FICCIÓN" onclick="openLightbox(this.src)">
+          </div>
         </div>
       </div>
 
@@ -546,7 +592,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">DESDANZA DE UNA TRAVESTI EN LA SALA</a>
           </div>
-          <img src="fanzine01.jpg" class="subitem-photo" alt="DESDANZA DE UNA TRAVESTI EN LA SALA" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="fanzine01.jpg" class="subitem-photo" alt="DESDANZA DE UNA TRAVESTI EN LA SALA" onclick="openLightbox(this.src)">
+          </div>
         </div>
       </div>
 
@@ -560,7 +608,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">ANGELS IN MEXICO CITY X ROCIO CHACON</a>
           </div>
-          <img src="campana01.jpg" class="subitem-photo" alt="ANGELS IN MEXICO CITY" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="campana01.jpg" class="subitem-photo" alt="ANGELS IN MEXICO CITY" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -568,7 +618,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">OLA DE CALOR - OLA DE COLOR</a>
           </div>
-          <img src="campana02.jpg" class="subitem-photo" alt="OLA DE CALOR - OLA DE COLOR" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="campana02.jpg" class="subitem-photo" alt="OLA DE CALOR - OLA DE COLOR" onclick="openLightbox(this.src)">
+          </div>
         </div>
       </div>
 
@@ -582,7 +634,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">TEORIA DEL HUEVO</a>
           </div>
-          <img src="asistencia01.jpg" class="subitem-photo" alt="TEORIA DEL HUEVO" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="asistencia01.jpg" class="subitem-photo" alt="TEORIA DEL HUEVO" onclick="openLightbox(this.src)">
+          </div>
         </div>
 
         <div class="archive-item-block">
@@ -590,7 +644,9 @@
             <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             <a href="#">ANTRO</a>
           </div>
-          <img src="asistencia02.jpg" class="subitem-photo" alt="ANTRO" onclick="openLightbox(this.src)">
+          <div class="subitem-photos">
+            <img src="asistencia02.jpg" class="subitem-photo" alt="ANTRO" onclick="openLightbox(this.src)">
+          </div>
         </div>
       </div>
 
@@ -681,42 +737,3 @@
 
       items.forEach(item => {
         item.x += item.vx;
-        item.y += item.vy;
-
-        let hit = false;
-
-        if (item.x <= 0) {
-          item.x = 0;
-          item.vx *= -1;
-          hit = true;
-        } else if (item.x + item.w >= boundsWidth) {
-          item.x = boundsWidth - item.w;
-          item.vx *= -1;
-          hit = true;
-        }
-
-        if (item.y <= 0) {
-          item.y = 0;
-          item.vy *= -1;
-          hit = true;
-        } else if (item.y + item.h >= boundsHeight) {
-          item.y = boundsHeight - item.h;
-          item.vy *= -1;
-          hit = true;
-        }
-
-        if (hit) {
-          morphGeometric(item);
-        }
-
-        item.el.style.transform = `translate3d(${item.x}px, ${item.y}px, 0)`;
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    requestAnimationFrame(animate);
-  </script>
-
-</body>
-</html>
