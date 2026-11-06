@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PROYECTOS - Lila Timpanar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      background-color: #F2F2F2;
+    }
+
+    /* Encabezado fijo */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 10px 12px;
+      box-sizing: border-box;
+      font-family: 'Alegreya Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      background-color: rgba(242, 242, 242, 0.95);
+    }
+
+    .brand {
+      color: #00FF00;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+    }
+
+    nav a {
+      color: #00FF00;
+      text-decoration: none;
+      text-transform: lowercase;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover, .brand:hover {
+      opacity: 0.7;
+    }
+
+    /* Contenedor principal */
+    .category-page-section {
+      padding: 70px 20px 60px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+
+    .category-page-container {
+      max-width: 550px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .section-title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 25px;
+    }
+
+    .outlook-icon {
+      display: inline-block;
+      width: 15px;
+      height: 11px;
+      border: 1.5px solid #B30033;
+      position: relative;
+      background-color: transparent;
+      box-sizing: border-box;
+    }
+
+    .outlook-icon::before {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: 0;
+      height: 0;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 4px solid #B30033;
+    }
+
+    .section-title {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 18px;
+      color: #B30033;
+      text-decoration: underline;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    /* Lista de sub-ítems */
+    .archive-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-left: 0;
+      list-style: none;
+      margin: 0;
+    }
+
+    .archive-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .paperclip-icon {
+      width: 15px;
+      height: 15px;
+      min-width: 15px;
+      margin-top: 2px;
+      color: #B30033;
+      transition: color 0.2s ease;
+    }
+
+    .archive-item a {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 16px;
+      color: #B30033;
+      text-decoration: none;
+      text-transform: uppercase;
+      line-height: 1.25;
+      word-break: break-word;
+      transition: color 0.2s ease;
+    }
+
+    .archive-item:hover a,
+    .archive-item:hover .paperclip-icon {
+      color: #00FF00;
+    }
+
+    @media (max-width: 480px) {
+      header { padding: 8px 10px; }
+      .category-page-section { padding: 55px 15px 40px 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado fijo con retorno a la home -->
+  <header>
+    <a href="index.html" class="brand">LILA TIMPANAR</a>
+    <nav>
+      <a href="index.html#bio">bio.</a>
+      <a href="index.html#archivo">archivo</a>
+    </nav>
+  </header>
+
+  <main class="category-page-section">
+    <div class="category-page-container">
+
+      <div class="section-title-wrapper">
+        <span class="outlook-icon"></span>
+        <h1 class="section-title">PROYECTOS</h1>
+      </div>
+
+      <!-- Subtítulos de PROYECTOS -->
+      <div class="archive-list">
+        <div class="archive-item">
+          <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          <a href="seida-retida.html">SEIDA RETIDA</a>
+        </div>
+
+        <div class="archive-item">
+          <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          <a href="revuelto-conjuntivo.html">REVUELTO CONJUNTIVO</a>
+        </div>
+
+        <div class="archive-item">
+          <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          <a href="#">PUÑAL</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
