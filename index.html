@@ -145,14 +145,9 @@
       position: relative;
       z-index: 2;
       text-align: left;
-    }
-
-    .archive-category {
-      margin-top: 25px;
-      margin-bottom: 12px;
-      cursor: pointer;
-      user-select: none;
-      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
     .category-title {
@@ -166,6 +161,17 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .archive-category-link {
+      text-decoration: none;
+      width: fit-content;
+      display: block;
+    }
+
+    .archive-category-link:hover .category-title {
+      color: #00FF00;
     }
 
     /* Ícono desplegable estilo MS Outlook */
@@ -177,6 +183,11 @@
       position: relative;
       background-color: transparent;
       box-sizing: border-box;
+      transition: border-color 0.2s ease;
+    }
+
+    .archive-category-link:hover .outlook-icon {
+      border-color: #00FF00;
     }
 
     .outlook-icon::before {
@@ -189,62 +200,11 @@
       border-left: 3px solid transparent;
       border-right: 3px solid transparent;
       border-top: 4px solid #B30033;
-      transform: rotate(-90deg); /* Apunta hacia la derecha cuando está cerrado */
-      transition: transform 0.2s ease;
+      transition: border-top-color 0.2s ease;
     }
 
-    /* Rotación del triángulo al desplegar */
-    .archive-category.active .outlook-icon::before {
-      transform: rotate(0deg); /* Apunta hacia abajo cuando está desplegado */
-    }
-
-    /* Ocultar listas por defecto */
-    .archive-list {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      padding-left: 0;
-      list-style: none;
-      margin: 0;
-      margin-bottom: 15px;
-    }
-
-    /* Mostrar lista cuando está activa */
-    .archive-list.active {
-      display: flex;
-    }
-
-    .archive-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .paperclip-icon {
-      width: 15px;
-      height: 15px;
-      min-width: 15px;
-      margin-top: 2px;
-      color: #B30033;
-      transition: color 0.2s ease;
-    }
-
-    .archive-item a {
-      font-family: 'Alegreya Sans', sans-serif;
-      font-style: italic;
-      font-weight: 400;
-      font-size: 16px;
-      color: #B30033;
-      text-decoration: none;
-      text-transform: uppercase;
-      line-height: 1.25;
-      word-break: break-word;
-      transition: color 0.2s ease;
-    }
-
-    .archive-item:hover a,
-    .archive-item:hover .paperclip-icon {
-      color: #00FF00;
+    .archive-category-link:hover .outlook-icon::before {
+      border-top-color: #00FF00;
     }
 
     /* Figuras geométricas flotantes */
@@ -280,7 +240,7 @@
     </nav>
   </header>
 
-  <!-- Sección con el GIF completo -->
+  <!-- Sección GIF principal -->
   <section class="hero-section">
     <img src="fondo.gif" class="hero-img" alt="Lila Timpanar">
   </section>
@@ -316,91 +276,42 @@
     <div class="archive-container">
 
       <!-- PROYECTOS -->
-      <div class="archive-category">
+      <a href="proyectos.html" class="archive-category-link">
         <div class="category-title"><span class="outlook-icon"></span> PROYECTOS</div>
-      </div>
-      <div class="archive-list">
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="seida-retida.html">SEIDA RETIDA</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="revuelto-conjuntivo.html">REVUELTO CONJUNTIVO</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">PUÑAL</a></div>
-      </div>
+      </a>
 
       <!-- CLASES -->
-      <div class="archive-category">
+      <a href="clases.html" class="archive-category-link">
         <div class="category-title"><span class="outlook-icon"></span> CLASES</div>
-      </div>
-      <div class="archive-list">
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">DESDE Y HACIA EL PISO</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">ARCHIVOS QUE MUEVEN ESCRITURAS, ESCRITURAS QUE MUEVEN ARCHIVOS</a></div>
-      </div>
+      </a>
 
       <!-- COLABORACIONES -->
-      <div class="archive-category">
+      <a href="colaboraciones.html" class="archive-category-link">
         <div class="category-title"><span class="outlook-icon"></span> COLABORACIONES</div>
-      </div>
-      <div class="archive-list">
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">SUPER FAN</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">CAMPER</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">EVENTUALMENTE</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">DANZA TRANS</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">CAMPAÑA PRIDE</a></div>
-      </div>
+      </a>
 
       <!-- PUBLICACIONES DE TEXTO -->
-      <div class="archive-category">
+      <a href="publicaciones-de-texto.html" class="archive-category-link">
         <div class="category-title"><span class="outlook-icon"></span> PUBLICACIONES DE TEXTO</div>
-      </div>
-      <div class="archive-list">
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/934/pedagogicas-travestis" target="_blank">INCITACIONES PEDAGÓGICAS TRAVESTIS.</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/914/manifiesto-al-cuerpo-inteligente-sobre-el-cuerpo-que-danza-como-una-inteligencia-artificial" target="_blank">MANIFIESTO AL CUERPO INTELIGENTE.</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/907/fisicalidad" target="_blank">LA FISICALIDAD DE LAS COSAS (DESDE) CON LAS QUE BAILO</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="https://cuadernosdedanza.com.ar/index.php/danzacontemporaneaencartelera/871/mas-tierra-entre-tanto-cemento" target="_blank">MÁS TIERRA ENTRE TANTO CEMENTO</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="https://cuadernosdedanza.com.ar/index.php/danzacontemporaneaencartelera/853/entre-parentesis" target="_blank">UNA ESPERANZA DESROMANTIZADA ENTRE (UN) PARÉNTESIS EN PARQUE PATRICIOS EN LA CASA (QUE PRONTO SERÁ NAVE ESPACIAL) Y GALPÓN FACE</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/839/toma-la-danza" target="_blank">TOMA LA DANZA</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/823/improvisacion" target="_blank">ARCHIVO EN FICCIÓN DE MIS PRÁCTICAS COTIDIANAS DE IMPROVISACIÓN</a></div>
-      </div>
+      </a>
 
       <!-- FANZINE -->
-      <div class="archive-category">
+      <a href="fanzine.html" class="archive-category-link">
         <div class="category-title"><span class="outlook-icon"></span> FANZINE</div>
-      </div>
-      <div class="archive-list">
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">DESDANZA DE UNA TRAVESTI EN LA SALA</a></div>
-      </div>
+      </a>
 
       <!-- CAMPAÑA FOTOGRÁFICA -->
-      <div class="archive-category">
+      <a href="campana-fotografica.html" class="archive-category-link">
         <div class="category-title"><span class="outlook-icon"></span> CAMPAÑA FOTOGRÁFICA</div>
-      </div>
-      <div class="archive-list">
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">ANGELS IN MEXICO CITY X ROCIO CHACON</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">OLA DE CALOR - OLA DE COLOR</a></div>
-      </div>
+      </a>
 
       <!-- ASISTENCIA DE DIRECCIÓN -->
-      <div class="archive-category">
+      <a href="asistencia-de-direccion.html" class="archive-category-link">
         <div class="category-title"><span class="outlook-icon"></span> ASISTENCIA DE DIRECCIÓN</div>
-      </div>
-      <div class="archive-list">
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">TEORIA DEL HUEVO</a></div>
-        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">ANTRO</a></div>
-      </div>
+      </a>
 
     </div>
   </section>
-
-  <!-- Script para desplegar categorías al hacer clic -->
-  <script>
-    document.querySelectorAll('.archive-category').forEach(category => {
-      category.addEventListener('click', () => {
-        category.classList.toggle('active');
-        const list = category.nextElementSibling;
-        if (list && list.classList.contains('archive-list')) {
-          list.classList.toggle('active');
-        }
-      });
-    });
-  </script>
 
   <!-- Script para la animación física de las figuras -->
   <script>
