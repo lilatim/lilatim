@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ETERNO - Lila Tim</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      background-color: #F2F2F2;
+    }
+
+    /* Encabezado fijo idéntico al sitio principal */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 14px 24px;
+      box-sizing: border-box;
+      font-family: 'Alegreya Sans', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      background-color: rgba(242, 242, 242, 0.95);
+    }
+
+    .brand {
+      color: #00FF00;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+    }
+
+    nav a {
+      color: #00FF00;
+      text-decoration: none;
+      text-transform: lowercase;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover, .brand:hover {
+      opacity: 0.7;
+    }
+
+    /* Contenedor principal del proyecto */
+    .project-section {
+      padding: 80px 40px 80px 40px;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+
+    .project-container {
+      width: 100%;
+      max-width: 100%;
+      text-align: left;
+    }
+
+    /* Encabezado de título con ganchito */
+    .title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .paperclip-icon {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      color: #B30033;
+    }
+
+    .project-title {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 24px;
+      color: #B30033;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    /* Texto informativo */
+    .project-text {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: #444444;
+      line-height: 1.6;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .project-text p {
+      margin: 0 0 18px 0;
+    }
+
+    .subtitle-label {
+      font-weight: 500;
+      margin-top: 20px;
+      display: block;
+      color: #222222;
+      text-transform: uppercase;
+    }
+
+    /* Galería vertical centrada */
+    .media-gallery {
+      display: flex;
+      flex-direction: flex-start;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 35px;
+      width: 100%;
+    }
+
+    .media-gallery img {
+      height: 243px;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .media-gallery img:hover {
+      opacity: 0.9;
+      transform: scale(1.01);
+    }
+
+    /* Modal / Lightbox para ver fotos en grande */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.88);
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90%;
+      max-height: 90vh;
+      object-fit: contain;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: #00FF00;
+      font-size: 28px;
+      font-family: monospace;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+      .project-section {
+        padding: 70px 20px 50px 20px;
+      }
+      .project-text {
+        font-size: 15px;
+      }
+      .project-title {
+        font-size: 20px;
+      }
+      .media-gallery img {
+        height: 189px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 10px 14px;
+        font-size: 16px;
+      }
+      .media-gallery img {
+        height: 175px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado fijo -->
+  <header>
+    <a href="index.html" class="brand">LILA TIM</a>
+    <nav>
+      <a href="index.html#bio">bio.</a>
+      <a href="index.html#archivo">archivo</a>
+    </nav>
+  </header>
+
+  <!-- Contenido del Proyecto -->
+  <main class="project-section">
+    <div class="project-container">
+
+      <!-- Título con ganchito -->
+      <div class="title-wrapper">
+        <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+        </svg>
+        <h1 class="project-title">ETERNO</h1>
+      </div>
+
+      <!-- Texto informativo del proyecto -->
+      <div class="project-text">
+        <p>ETERNO deforma e imagina modos de desplegar el sonido como un acontecimiento físico, espacial y colectivo. Alejándose de la saturación de estímulos maquinales, dedicando la noche a la escucha como acto central.</p>
+
+        <span class="subtitle-label">MÚSICA:-:</span>
+        <p>Leslie García @microhm.io<br>
+        hheerrdd @hheerrdd_<br>
+        Nimrock11 @nimrock11</p>
+
+        <span class="subtitle-label">CUERPO:-:</span>
+        <p>Ana Zambrano @ana.g.zambrano<br>
+        Camila Arroyo @camarrrom<br>
+        Lila Tim @lilatimpanar</p>
+
+        <span class="subtitle-label">ILUMINACIÓN:-:</span>
+        <p>ExSoup @ex__soup</p>
+
+        <span class="subtitle-label">SONIDO:-:</span>
+        <p>Amygdala HiFi @amygdala.hifi</p>
+
+        <span class="subtitle-label">UBICACIÓN Y FECHA:-:</span>
+        <p>📍 Squash Ciprés, Sta. María la Ribera.<br>
+        Sábado 29 de agosto, 9:30 pm</p>
+      </div>
+
+      <!-- Galería de imágenes -->
+      <div class="media-gallery">
+        <img src="eterno01.jpg" alt="ETERNO 01" onclick="openLightbox(this.src)">
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Visor / Lightbox para ver la imagen ampliada -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Imagen ampliada">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
