@@ -702,6 +702,29 @@
     }
 
     requestAnimationFrame(animate);
+
+    /* Reiniciar videos de YouTube al volver a entrar a la página o pestaña */
+    function restartYouTubeVideos() {
+      document.querySelectorAll('iframe[src*="youtube.com/embed"]').forEach(iframe => {
+        const currentSrc = iframe.src;
+        iframe.src = '';
+        iframe.src = currentSrc;
+      });
+    }
+
+    // Se activa al volver a la pestaña o desbloquear el celular
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        restartYouTubeVideos();
+      }
+    });
+
+    // Se activa si el navegador restaura la página desde la memoria caché (botón Atrás)
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        restartYouTubeVideos();
+      }
+    });
   </script>
 
 </body>
