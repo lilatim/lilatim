@@ -325,11 +325,37 @@
                   height 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    @media (max-width: 768px) {
-      .bio-section, .archive-section { padding-left: 20px; padding-right: 20px; }
-      .bio-text { font-size: 15px; }
-      .category-title { font-size: 20px; }
-      .subproject-photo, .video-card { height: 189px; }
+  @media (max-width: 768px) {
+      body { padding: 30px 15px 60px 15px; }
+      header { margin-bottom: 40px; }
+      header h1 { font-size: 1.8rem; }
+      .project-row { margin-bottom: 50px; }
+      .project-title { font-size: 1.5rem; margin-bottom: 18px; }
+
+      /* Galería horizontal deslizable en celular */
+      .subproject-gallery {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Deslizamiento suave en iOS/Android */
+        gap: 10px;
+        padding-bottom: 8px;
+      }
+
+      /* Fotos una al lado de la otra manteniendo su proporción */
+      .subproject-image {
+        height: 175px;
+        width: auto;
+        max-width: none;
+        flex-shrink: 0; /* Evita que las fotos se aplasten */
+      }
+
+      /* Videos también al lado con la misma altura */
+      .video-card {
+        height: 175px;
+        flex-shrink: 0;
+      }
     }
 
     @media (max-width: 480px) {
