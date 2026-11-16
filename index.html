@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -201,14 +200,13 @@
 
     /* Grilla de subproyectos */
     .subproject-grid {
-      display: none;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 0 !important;
-      margin: 10px 0 35px 0;
-      padding: 0;
-      width: 100%;
+     flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        gap: 4px !important;
+        width: 100% !important;
     }
 
     .subproject-grid.active {
