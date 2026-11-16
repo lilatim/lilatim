@@ -383,3 +383,341 @@
         justify-content: flex-start !important;
         overflow-x: auto !important;
         gap: 4px !important;
+        width: 100% !important;
+      }
+
+      .subproject-grid.active {
+        display: flex !important;
+      }
+
+      .subproject-card {
+        display: flex !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        height: auto !important;
+      }
+
+      /* Mantiene la proporción real exacta sin recortar */
+      .subproject-photo {
+        height: 115px !important;
+        width: auto !important;
+        max-width: none !important;
+        object-fit: contain !important;
+        display: block !important;
+      }
+
+      /* Mantiene la proporción real de los Shorts (9:16) */
+      .video-card {
+        height: 115px !important;
+        width: 64.68px !important;
+        flex: 0 0 auto !important;
+      }
+
+      .footer-video-wrapper {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado fijo -->
+  <header>
+    <a href="#" class="brand">LILA TIM</a>
+    <nav>
+      <a href="#bio">bio.</a>
+      <a href="#archivo">archivo</a>
+    </nav>
+  </header>
+
+  <!-- Sección GIF principal -->
+  <section class="hero-section">
+    <img src="fondo.gif" class="hero-img" alt="Lila Tim">
+  </section>
+
+  <!-- Sección Bio -->
+  <section id="bio" class="bio-section">
+    <div class="bio-container">
+      <hr class="separator-line">
+      <div class="bio-text">
+        <p>lila tim (mendoza, argentina) es hartista travesti, performer, escritora y bailarina, radicada en la ciudad de méxico. Su práctica indaga entre la deformación y el sinsentido hacia una de-generación y per-versión de la danza como disciplina en la que se ha formado.</p>
+
+        <p>Su práctica compone un cruce entre la escritura y la improvisación como umbrales desde donde provoca atravesamientos que parten desde la fantasía y lo ocurrente. la identidad y el paso del tiempo. lo poético y el cringe.</p>
+
+        <p>Su primera investigación como solista, SEIDA RETIDA, fue presentada por primera vez en 2025 en Buenos Aires, Argentina, y en la provincia de Córdoba en el mismo año.<br>
+        Este performance relaciona la polifonía travesti con la biografía de la performer. Utiliza elementos del género epistolar y la autoficción. A su vez, esboza una crítica a la industria farmacéutica que le provee las hormonas para su feminización, de la que paradójicamente se hace y conforma su neo-cuerpo.</p>
+
+        <p>Hace parte del colectivo performático Revuelto conjuntivo, compuesto por Aris Chicco, Saluminé y Yos.</p>
+
+        <p>Además es colaboradora de la revista <a href="https://Cuadernosdedanza.com" target="_blank">Cuadernosdedanza.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Imagen divisora (después de la Bio) -->
+  <img src="divider.jpg" class="divider-img" alt="Divisor">
+
+  <!-- Sección Archivo (Categorías) -->
+  <section id="archivo" class="archive-section">
+    <div class="geo-shape" id="shape1"></div>
+    <div class="geo-shape" id="shape2"></div>
+    <div class="geo-shape" id="shape3"></div>
+    <div class="geo-shape" id="shape4"></div>
+    <div class="geo-shape" id="shape5"></div>
+    <div class="geo-shape" id="shape6"></div>
+
+    <div class="archive-container">
+
+      <!-- PROYECTOS -->
+      <div class="archive-category">
+        <div class="category-title"><span class="outlook-icon"></span> PROYECTOS</div>
+      </div>
+      <div class="subproject-grid">
+        <a href="seida-retida.html" class="subproject-card">
+          <img src="seida retida 2025 CABA/SEIDA01.jpg" class="subproject-photo" alt="SEIDA RETIDA">
+        </a>
+
+        <a href="revuelto-conjuntivo.html" class="subproject-card">
+          <img src="ITINERARIO_ERANTE/ITINERARIO01.JPG" class="subproject-photo" alt="REVUELTO CONJUNTIVO">
+        </a>
+       
+        <a href="daju.html" class="subproject-card">
+          <img src="DAJU UNAM/DAJU.webp" class="subproject-photo" alt="DAJU">
+        </a>
+        
+        <a href="#" class="subproject-card">
+          <img src="punal.jpg" class="subproject-photo" alt="PUÑAL">
+        </a>
+      </div>
+
+      <!-- PRÁCTICAS -->
+      <div class="archive-category">
+        <div class="category-title"><span class="outlook-icon"></span> PRÁCTICAS</div>
+      </div>
+      <div class="subproject-grid">
+        <!-- Foto 1 -->
+        <a href="desde-y-hacia.html" class="subproject-card">
+          <img src="DESDE Y HACIA EL PISO prácticas_/clases01.jpg" class="subproject-photo" alt="Desde y hacia el piso">
+        </a>
+
+        <!-- Foto 2 -->
+        <a href="archivos.html" class="subproject-card">
+          <img src="DESDE Y HACIA EL PISO prácticas_/desde.jpg" class="subproject-photo" alt="Archivos">
+        </a>
+
+        <!-- Video 1 -->
+        <div class="subproject-card video-card">
+          <iframe 
+            class="subproject-video"
+            src="https://www.youtube.com/embed/DkyhNHrmk-s?autoplay=1&mute=1&loop=1&playlist=DkyhNHrmk-s&controls=0&modestbranding=1&rel=0" 
+            title="Video Práctica 1"
+            frameborder="0" 
+            allow="autoplay; encrypted-media">
+          </iframe>
+          <a href="https://youtu.be/DkyhNHrmk-s?si=VBWz1lQd1yxZkgjC" target="_blank" class="video-overlay" aria-label="Ver video en YouTube"></a>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="subproject-card video-card">
+          <iframe 
+            class="subproject-video"
+            src="https://www.youtube.com/embed/3MaqOiwsNfU?autoplay=1&mute=1&loop=1&playlist=3MaqOiwsNfU&controls=0&modestbranding=1&rel=0" 
+            title="Video Práctica 2"
+            frameborder="0" 
+            allow="autoplay; encrypted-media">
+          </iframe>
+          <a href="https://youtu.be/3MaqOiwsNfU?si=N5IqyCELPbbaSCi8" target="_blank" class="video-overlay" aria-label="Ver video en YouTube"></a>
+        </div>
+      </div>
+
+      <!-- COLABORACIONES -->
+      <div class="archive-category">
+        <div class="category-title"><span class="outlook-icon"></span> COLABORACIONES</div>
+      </div>
+      <div class="subproject-grid">
+        <a href="super-fan.html" class="subproject-card">
+          <img src="SUPER FAN 2026/superfan.JPEG" class="subproject-photo" alt="SUPER FAN">
+        </a>
+
+        <a href="camper.html" class="subproject-card">
+          <img src="CAMPER 2026/IMG_6417.JPG" class="subproject-photo" alt="CAMPER">
+        </a>
+
+        <a href="angels.html" class="subproject-card">
+          <img src="ANGELS IN MEXICO CITY X ROCIO CHACON_/CAMPANA01.JPG" class="subproject-photo" alt="ANGELS IN MEXICO CITY">
+        </a>
+
+        <a href="ola.html" class="subproject-card">
+          <img src="OLA DE CALOR - OLA DE COLOR_/CAMPANA02.JPG" class="subproject-photo" alt="OLA DE CALOR">
+        </a>
+
+        <a href="eterno.html" class="subproject-card">
+          <img src="ETERNO 2026_/ETERNO.jpg" class="subproject-photo" alt="ETERNO">
+        </a>
+      </div>
+
+      <!-- PUBLICACIONES DE TEXTO -->
+      <div class="archive-category">
+        <div class="category-title"><span class="outlook-icon"></span> PUBLICACIONES DE TEXTO</div>
+      </div>
+      <div class="subproject-grid">
+        <a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/934/pedagogicas-travestis" target="_blank" class="subproject-card">
+          <img src="fanzine/travesti.jfif" class="subproject-photo" alt="Pedagógicas travestis">
+        </a>
+
+        <a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/914/manifiesto-al-cuerpo-inteligente-sobre-el-cuerpo-que-danza-como-una-inteligencia-artificial" target="_blank" class="subproject-card">
+          <img src="fanzine/cuerpo.jfif" class="subproject-photo" alt="Manifiesto al cuerpo inteligente">
+        </a>
+
+        <a href="https://cuadernosdedanza.com.ar/index.php/textosdanzacontemporanea/907/fisicalidad" target="_blank" class="subproject-card">
+          <img src="https://cuadernosdedanza.com.ar/images/lila_tim_1.jpg" class="subproject-photo" alt="LA FISICALIDAD DE LAS COSAS">
+        </a>
+      </div>
+
+      <!-- FANZINE -->
+      <div class="archive-category">
+        <div class="category-title"><span class="outlook-icon"></span> FANZINE</div>
+      </div>
+      <div class="subproject-grid">
+        <a href="#" class="subproject-card">
+          <img src="fanzine/Tapa y contratapa 3 lila tim .pdf.png" class="subproject-photo" alt="Fanzine">
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección Video Final -->
+  <section class="footer-video-section">
+    <div class="footer-video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/DkyhNHrmk-s?autoplay=1&mute=1&loop=1&playlist=DkyhNHrmk-s&controls=0&modestbranding=1&rel=0&playsinline=1"
+        title="Lila Tim Video Final"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    /* Desplegar categorías al hacer clic */
+    document.querySelectorAll('.archive-category').forEach(category => {
+      category.addEventListener('click', () => {
+        category.classList.toggle('active');
+        const grid = category.nextElementSibling;
+        if (grid && grid.classList.contains('subproject-grid')) {
+          grid.classList.toggle('active');
+        }
+      });
+    });
+
+    /* Animación física de figuras geométricas */
+    const section = document.getElementById('archivo');
+
+    const geoShapes = [
+      { w: 110, h: 110, br: "50%" },
+      { w: 160, h: 70,  br: "50%" },
+      { w: 135, h: 135, br: "50%" },
+      { w: 180, h: 80,  br: "50%" },
+      { w: 90,  h: 90,  br: "50%" },
+      { w: 140, h: 60,  br: "50%" }
+    ];
+
+    const items = [
+      { el: document.getElementById('shape1'), x: 10,  y: 20,  vx: 0.45, vy: 0.35, w: 110, h: 110, shapeIdx: 0 },
+      { el: document.getElementById('shape2'), x: 180, y: 150, vx: -0.35, vy: 0.5,  w: 160, h: 70,  shapeIdx: 1 },
+      { el: document.getElementById('shape3'), x: 80,  y: 350, vx: 0.5,  vy: -0.4, w: 135, h: 135, shapeIdx: 2 },
+      { el: document.getElementById('shape4'), x: 220, y: 50,  vx: -0.4, vy: -0.3, w: 90,  h: 90,  shapeIdx: 4 },
+      { el: document.getElementById('shape5'), x: 50,  y: 220, vx: 0.3,  vy: 0.45, w: 140, h: 60,  shapeIdx: 5 },
+      { el: document.getElementById('shape6'), x: 150, y: 280, vx: -0.5, vy: 0.25, w: 180, h: 80,  shapeIdx: 3 }
+    ];
+
+    items.forEach(item => updateShape(item));
+
+    function updateShape(item) {
+      const s = geoShapes[item.shapeIdx];
+      item.w = s.w;
+      item.h = s.h;
+      item.el.style.width = `${s.w}px`;
+      item.el.style.height = `${s.h}px`;
+      item.el.style.borderRadius = s.br;
+    }
+
+    function morphGeometric(item) {
+      let nextIdx;
+      do {
+        nextIdx = Math.floor(Math.random() * geoShapes.length);
+      } while (nextIdx === item.shapeIdx);
+      
+      item.shapeIdx = nextIdx;
+      updateShape(item);
+    }
+
+    function animate() {
+      const rect = section.getBoundingClientRect();
+      const boundsWidth = rect.width;
+      const boundsHeight = rect.height;
+
+      items.forEach(item => {
+        item.x += item.vx;
+        item.y += item.vy;
+
+        let hit = false;
+
+        if (item.x <= 0) {
+          item.x = 0;
+          item.vx *= -1;
+          hit = true;
+        } else if (item.x + item.w >= boundsWidth) {
+          item.x = boundsWidth - item.w;
+          item.vx *= -1;
+          hit = true;
+        }
+
+        if (item.y <= 0) {
+          item.y = 0;
+          item.vy *= -1;
+          hit = true;
+        } else if (item.y + item.h >= boundsHeight) {
+          item.y = boundsHeight - item.h;
+          item.vy *= -1;
+          hit = true;
+        }
+
+        if (hit) {
+          morphGeometric(item);
+        }
+
+        item.el.style.transform = `translate3d(${item.x}px, ${item.y}px, 0)`;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+
+    /* Reiniciar videos de YouTube al volver a entrar a la página o pestaña */
+    function restartYouTubeVideos() {
+      document.querySelectorAll('iframe[src*="youtube.com/embed"]').forEach(iframe => {
+        const currentSrc = iframe.src;
+        iframe.src = '';
+        iframe.src = currentSrc;
+      });
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        restartYouTubeVideos();
+      }
+    });
+
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        restartYouTubeVideos();
+      }
+    });
+  </script>
+
+</body>
+</html>
