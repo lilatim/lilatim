@@ -280,22 +280,25 @@
       margin: 0 !important;
       padding: 0 !important;
     }
-/* Tarjeta con video miniatura */
+/* Tarjeta con video miniatura en proporción Reel (9:16) */
     .video-card {
       position: relative;
       height: 243px;
-      aspect-ratio: 16 / 9; /* Mantiene proporción panorámica sin franjas negras */
+      aspect-ratio: 9 / 16; /* Proporción vertical de reel */
       overflow: hidden;
       background-color: #000;
     }
 
     .subproject-video {
-      width: 100%;
-      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 315%; /* Ensancha el iframe 16:9 para cubrir el alto vertical 9:16 sin bordes negros */
+      height: 115%;
+      transform: translate(-50%, -50%);
       border: none;
       display: block;
-      pointer-events: none; /* Evita que YouTube capture el clic */
-      transform: scale(1.15); /* Oculta ligeramente los bordes/título superior de YouTube */
+      pointer-events: none;
     }
 
     .video-overlay {
