@@ -15,9 +15,10 @@
       overflow-x: hidden;
       scroll-behavior: smooth;
       background-color: #F2F2F2;
+      font-family: 'Alegreya Sans', sans-serif;
     }
 
-    /* Encabezado fijo idéntico al sitio principal */
+    /* Encabezado fijo */
     header {
       display: flex;
       justify-content: space-between;
@@ -27,11 +28,10 @@
       left: 0;
       width: 100%;
       z-index: 10;
-      padding: 10px 12px;
+      padding: 14px 24px;
       box-sizing: border-box;
-      font-family: 'Alegreya Sans', sans-serif;
       font-weight: 500;
-      font-size: 15px;
+      font-size: 18px;
       background-color: rgba(242, 242, 242, 0.95);
     }
 
@@ -39,12 +39,12 @@
       color: #00FF00;
       text-decoration: none;
       text-transform: uppercase;
-      transition: color 0.2s ease;
+      transition: opacity 0.2s ease;
     }
 
     nav {
       display: flex;
-      gap: 12px;
+      gap: 16px;
     }
 
     nav a {
@@ -60,7 +60,7 @@
 
     /* Contenedor principal del proyecto */
     .project-section {
-      padding: 60px 20px 80px 20px;
+      padding: 85px 24px 80px 24px;
       width: 100%;
       box-sizing: border-box;
       display: flex;
@@ -73,56 +73,131 @@
       text-align: left;
     }
 
-@media (max-width: 768px) {
+    /* Título con ganchito */
+    .title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      color: #B30033;
+    }
+
+    .paperclip-icon {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      color: #B30033;
+    }
+
+    .project-title {
+      margin: 0;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 20px;
+      color: #B30033;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Texto informativo */
+    .project-text {
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.55;
+      color: #4A4A4A;
+      margin-bottom: 30px;
+    }
+
+    .project-text p {
+      margin-top: 4px;
+      margin-bottom: 18px;
+    }
+
+    .subtitle-label {
+      display: block;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.6px;
+      color: #B30033;
+      text-transform: uppercase;
+      margin-top: 16px;
+    }
+
+    /* Galería de fotos */
+    .media-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .media-gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: zoom-in;
+      transition: opacity 0.2s ease;
+    }
+
+    .media-gallery img:hover {
+      opacity: 0.92;
+    }
+
+    /* Lightbox / Visor de imagen ampliada */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 22px;
+      color: #00FF00;
+      font-size: 36px;
+      line-height: 1;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Ajustes específicos para celular */
+    @media (max-width: 768px) {
       header {
-        padding: 12px 16px !important;
-        font-size: 16px !important;
+        padding: 12px 16px;
+        font-size: 16px;
       }
 
-      .bio-section {
-        padding: 20px 16px 25px 16px !important;
+      .project-section {
+        padding: 72px 16px 60px 16px;
       }
 
-      .bio-text {
-        font-size: 16px !important;
+      .project-title {
+        font-size: 18px;
       }
 
-      .archive-section {
-        padding: 25px 16px 60px 16px !important;
+      .project-text {
+        font-size: 16px;
       }
 
-      /* Fuerza fila horizontal sin saltos de línea */
-      .subproject-grid {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        overflow-x: auto !important;
-        gap: 4px !important;
-        width: 100% !important;
-      }
-
-      /* Evita que las tarjetas ocupen el 100% del ancho */
-      .subproject-card {
-        display: flex !important;
-        flex: 0 0 auto !important;
-        width: auto !important;
-        max-width: none !important;
-      }
-
-      /* Achica las imágenes y videos */
-      .subproject-photo {
-        height: 115px !important;
-        width: auto !important;
-        max-width: none !important;
-        display: block !important;
-      }
-
-      .video-card {
-        height: 115px !important;
-        width: 65px !important; /* Proporción vertical 9:16 acorde a los 115px de alto */
-        flex: 0 0 auto !important;
+      .media-gallery {
+        gap: 12px;
       }
     }
   </style>
@@ -142,7 +217,7 @@
   <main class="project-section">
     <div class="project-container">
 
-      <!-- Título a la izquierda (18px) con ganchito -->
+      <!-- Título a la izquierda con ganchito -->
       <div class="title-wrapper">
         <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
@@ -170,7 +245,7 @@
         <span class="subtitle-label">SONIDO</span>
         <p>Amygdala HiFi @amygdala.hifi</p>
 
-        <p> Squash Ciprés, Sta. María la Rivera.<br>
+        <p>Squash Ciprés, Sta. María la Rivera.<br>
         Sábado 29 de agosto, 9:30 pm</p>
       </div>
 
