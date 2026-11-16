@@ -333,14 +333,23 @@
       .project-title { font-size: 1.5rem; margin-bottom: 18px; }
 
       /* Galería horizontal deslizable en celular */
-      .subproject-gallery {
-        display: flex;
+    .subproject-grid {
         flex-direction: row;
         flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* Deslizamiento suave en iOS/Android */
-        gap: 10px;
-        padding-bottom: 8px;
+        width: 100%;
+        gap: 2px !important;
+      }
+
+      .subproject-card {
+        flex: 1; /* Todas ocupan el mismo ancho disponible */
+        min-width: 0;
+      }
+
+      .subproject-photo,
+      .video-card {
+        width: 100%;
+        height: 110px; /* Altura uniforme para todas */
+        object-fit: cover; /* Recorta los bordes sin deformar la imagen */
       }
 
       /* Fotos una al lado de la otra manteniendo su proporción */
